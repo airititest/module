@@ -18,14 +18,14 @@
 }
 
 
-//ipad-pro
-@mixin pad-L{
+//pad-pro
+@mixin pad-l{
 	@media (max-width: 1024px){
 		@content;
 	}
 }
-//ipad
-@mixin pad-M{
+//pad
+@mixin pad-m{
 	@media (max-width: 768px){
 		@content;
 	}
@@ -33,7 +33,7 @@
 
 
 //phone
-@mixin mobile-l{
+@mixin phone-l{
 	@media (max-width: 480px){
 		@content;
 	}
@@ -51,7 +51,7 @@
 	}
 }
 
-@mixin mobile-s{
+@mixin phone-s{
     @media (max-width: 320px){
 		@content;
 	}

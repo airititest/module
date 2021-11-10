@@ -25,6 +25,20 @@
     padding-top:$pt;
     padding-bottom:$pb;
 }
+//x & y-軸
+@mixin p-a($py, $px) {
+    padding-top: $py;
+    padding-bottom: $py;
+    padding-left: $px;
+    padding-right: $px;
+}
+//上、右、下、左
+@mixin p($top, $right, $bottom, $left) {
+    padding-top: $top;
+    padding-right: $right;
+    padding-bottom: $bottom;
+    padding-left: $left;
+}
 
 
 //外間距-----
@@ -53,6 +67,20 @@
 @mixin m-y($mt, $mb) {
     margin-top:$mt;
     margin-bottom:$mb;
+}
+//x & y-軸
+@mixin m-a($my, $mx) {
+    margin-top: $my;
+    margin-bottom: $my;
+    margin-left: $mx;
+    margin-right: $mx;
+}
+//上、右、下、左
+@mixin m($top, $right, $bottom, $left) {
+    margin-top: $top;
+    margin-right: $right;
+    margin-bottom: $bottom;
+    margin-left: $left;
 }
 
 
