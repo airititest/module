@@ -25,12 +25,12 @@ $white:rgb(245, 245, 245);
 }
 
 //淡入效果
-@mixin fade-in{
+@mixin fadein{
     visibility: visible;
     opacity: 1;
 }
 //淡出效果
-@mixin fade-out ($visibility, $opacity){
+@mixin fadeout ($visibility, $opacity){
     visibility: $visibility;
     opacity: $opacity;
 }

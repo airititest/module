@@ -1,3 +1,4 @@
+//基本檔案
 @import 'reset';
 @import 'owl-carousel';
 @import 'layout';
@@ -6,3 +7,20 @@
 @import 'animation';
 @import 'default';
 @import 'screen';
+
+//加載檔案(需加入同樣的js名稱，才能完整呈現)
+@import 'screen-alert';
+@import 'scroll-content-effect';
+
+//雲端字體
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@200;300;400;500;600;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@300;400;500;700;900&display=swap');
+
+//內容樣式
+*{
+    @include font-name('Frank Ruhl Libre','Noto Serif TC');
+}
+
+body{
+    background-color: $white;
+}

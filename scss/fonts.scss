@@ -1,3 +1,8 @@
+//字體
+@mixin font-name($english, $chinese){
+    font-family: $english, $chinese, 'serif';
+}
+
 //文字間距
 @mixin font-b($size) {
     font-size: $size;
