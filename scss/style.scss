@@ -1,6 +1,5 @@
 //基本檔案
 @import 'reset';
-@import 'owl-carousel';
 @import 'layout';
 @import 'color';
 @import 'fonts';
@@ -8,19 +7,325 @@
 @import 'default';
 @import 'screen';
 
-//加載檔案(需加入同樣的js名稱，才能完整呈現)
-@import 'screen-alert';
-@import 'scroll-content-effect';
-
 //雲端字體
 @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@200;300;400;500;600;700;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@300;400;500;700;900&display=swap');
 
-//內容樣式
 *{
-    @include font-name('Frank Ruhl Libre','Noto Serif TC');
+    font-family: 'Noto Sans TC', sans-serif;
+}
+
+//內容樣式
+.mx{
+    @include m-x(10%, 10%);
+}
+header{
+    a{
+        @include p-y(16px, 16px);
+        display: block;
+        text-align: center;
+        img{
+            @include m-x(auto, auto);
+            max-width: 320px;
+        }
+    }
 }
 
 body{
+    background-color: rgb(231, 217, 204);
+}
+
+.event-title{
+    @include m-x(10%, 10%);
+    text-align: center;
+    img{
+        @include m-x(auto, auto);
+        width: 100%;
+    }
+    img:first-child{
+        display: block;
+    }
+    img:nth-child(2){
+        display: none;
+    }
+    div{
+        @include m-x(auto, auto);
+        height: 12px;
+        background-color: $primary;
+    }
+    div:nth-child(3){
+        width: 64%;
+    }
+    div:nth-child(4){
+        width: 40%;
+    }
+    h1{
+        @include font(28px);
+        color: $black;
+    }
+    img, div, h1{
+        @include m-b(24px);
+    }
+}
+
+.event-title{
+    @include m-t(40px);
+}
+
+.illstration{
+    position: relative;
+    img:first-child{
+        position: relative;
+        z-index: -999;
+    }
+    img:nth-child(2){
+        @include absolute(0, 0, 0, 0, auto);
+        z-index: -99;
+    }
+    img:nth-child(3){
+        @include absolute(0, 0, none, 0, auto);
+        z-index: -9;
+        max-width: unset;
+    }
+}
+
+.order-tips{
+    @include m-x(10%, 10%);
+    h2{
+        @include font(36px);
+        font-weight: bold;
+        color: $secondary;
+    }
+    .order-tips-info{
+        @include flex-row ;
+        .order-tips-info-area{
+            width: 100%;
+            .order-tips-info-area-content{
+                @include bg-color-a($white, 0.8);
+                @include m-x(10%, 10%);
+                @include p-x(24px, 24px);
+                @include p-y(24px, 24px);
+                border-radius: 16px;
+                border: 1px solid $primary;
+                box-shadow: 0 4px 4px rgba(0, 0, 0, 0.15);
+                p{
+                    @include font(40px);
+                    font-weight: bold;
+                    color: $primary;
+                }
+                span{
+                    @include font(16px);
+                    display: block;
+                }
+                p, span{
+                    @include p-b(16px);
+                }
+            }
+            .order-tips-info-area-dots{
+                height: 40px;
+                width: 100%;
+                position: relative;
+                span{
+                    @include m-x(auto, auto);
+                    position: relative;
+                    height: 40px;
+                    width: 40px;
+                    border-radius: 40px;
+                    background-color: $primary;
+                    display: block;
+                    &:after{
+                        content: '';
+                        @include absolute(0, 0, 0, 0, auto);
+                        height: 32px;
+                        width: 32px;
+                        border-radius: 32px;
+                        background-color: $primary*0.8;
+                    }
+                }
+                &:after{
+                    content: '';
+                    height: 1px;
+                    background-color: $primary;
+                    z-index: -9;
+                }
+            }   
+            img{
+                @include m-x(auto, auto);
+                width: 80%;
+                display: block;
+            }
+            .order-tips-info-area-content, .order-tips-info-area-dots, img{
+                @include m-b(48px);
+            }    
+        }
+        .order-tips-info-area:first-child{
+            .order-tips-info-area-content, img{
+            }
+            .order-tips-info-area-dots::after{
+                @include absolute(0, 0, 0, none, auto);
+                width: 50%;
+            }
+        }
+        .order-tips-info-area:nth-child(2), .order-tips-info-area:nth-child(3){
+            .order-tips-info-area-content, img{
+            }
+            .order-tips-info-area-dots::after{
+                @include absolute(0, 0, 0, 0, auto);
+                width: 100%;
+            }
+        }
+        .order-tips-info-area:last-child{
+            .order-tips-info-area-content, img{
+            }
+            .order-tips-info-area-dots::after{
+                @include absolute(0, none, 0, 0, auto);
+                width: 50%;
+            }
+        }
+    }
+    h2, .order-tips-info{
+        @include m-b(48px);
+    }
+}
+
+footer{
     background-color: $white;
+    color: $gray;
+    text-align: center;
+    p{
+        @include p-y(8px, 8px);
+        @include font(16px);
+    }
+}
+
+@include desktop-m{
+    .mx{
+        @include m-x(5%, 5%);
+    }
+    .order-tips{
+        .order-tips-info{
+            .order-tips-info-area{
+                .order-tips-info-area-content{
+                    p{
+                        @include font(32px);
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include desktop-s{
+    .order-tips{
+        .order-tips-info{
+            .order-tips-info-area{
+                .order-tips-info-area-content{
+                    p{
+                        @include font(28px);
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include pad-l{
+    .order-tips{
+        .order-tips-info{
+            flex-wrap: wrap;
+            .order-tips-info-area{
+                @include m-y(0, 5%);
+                @include p-x(24px, 24px);
+                @include p-y(24px, 24px);
+                @include bg-color-a($white, 0.8);
+                width: 47.5%;
+                border-radius: 16px;
+                box-shadow: 0 4px 4px rgba(0, 0, 0, 0.15);
+                .order-tips-info-area-content{
+                    @include p-x(0, 0);
+                    @include p-y(0, 0);
+                    background-color: unset;
+                    border: unset;
+                    box-shadow: unset;
+                    p{
+                        @include font(32px);
+                    }
+                    span{
+                        @include p-b(0);
+                    }
+                }
+                .order-tips-info-area-dots{
+                    display: none;
+                }
+                .order-tips-info-area-content, .order-tips-info-area-dots, img{
+                    @include m-b(0px);
+                }  
+            } 
+            .order-tips-info-area:first-child{
+                @include m-x(0 ,auto);
+            }
+            .order-tips-info-area:nth-child(2){
+                @include m-x(auto ,0);
+            }
+            .order-tips-info-area:nth-child(3){
+                @include m-x(0 ,auto);
+            }
+            .order-tips-info-area:last-child{
+                @include m-x(auto ,0);
+            }
+        }
+    }
+}
+
+@include phone-l{
+    .event-title{
+        @include m-t(0);
+        img:first-child{
+            display: none;
+        }
+        img:nth-child(2){
+            display: block;
+        }
+        div{
+            height: 4px;
+        }
+        h1{
+            @include font(20px);
+        }
+        img, div, h1{
+            @include m-b(16px);
+        }
+    }
+    .illstration{
+        overflow-x: clip;
+        img:nth-child(3){
+            @include absolute(0, -25%, none, -25%, auto);
+            min-height: 320px;
+        }
+    }
+    .order-tips{
+        h2{
+            @include font(24px);
+        }
+        .order-tips-info{
+            .order-tips-info-area{
+                @include p-x(24px, 24px);
+                @include p-y(24px, 24px);
+                width: 100%;
+                .order-tips-info-area-content{
+                    @include m-x(16px, 16px);
+                    p{
+                        text-align: center;
+                    }
+                }
+                img{
+                    @include m-x(10%, 10%);
+                    width: 80%;
+                }
+            }
+        }
+        h2, .order-tips-info{
+            @include m-b(8px);
+        }
+    }
 }

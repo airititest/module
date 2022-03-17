@@ -1,18 +1,7 @@
-//字體
-@mixin font-name($english, $chinese){
-    font-family: $english, $chinese, 'serif';
-}
-
 //文字間距
-@mixin font-b($size) {
+@mixin font($size) {
     font-size: $size;
     line-height: $size*1.5;
-    font-weight: bold;
-}
-@mixin font-n($size) {
-    font-size: $size;
-    line-height: $size*1.5;
-    font-weight: normal;
 }
 
 //文字呈現限制
