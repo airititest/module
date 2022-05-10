@@ -17,6 +17,7 @@
 
 <body class="content">
   <div>
+    <h1>test-01</h1>
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt quam eum eius, veritatis sit aperiam error
       dignissimos at iusto quaerat ipsum, vel nulla aut sequi porro sint, saepe culpa similique voluptatibus odio illo.
       Itaque quibusdam, est eaque repudiandae doloremque consequuntur eos dolorum. Consequatur libero dicta eius nulla,
@@ -704,7 +705,9 @@
   (function ($) {
     $(window).on("load", function () {
       $('.content').mCustomScrollbar({
-        theme: "minimal-dark"
+        theme: "minimal-dark",
+        contentTouchScroll: true,
+        documentTouchScroll: true,
       });
     });
   })(jQuery);
