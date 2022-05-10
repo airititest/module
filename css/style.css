@@ -344,14 +344,7 @@ blockquote, q {
 }
 
 body {
+  height: 3000px;
   background-color: whitesmoke;
-}
-
-p {
-  display: inline;
-}
-
-.active {
-  color: red;
 }
 /*# sourceMappingURL=style.css.map */

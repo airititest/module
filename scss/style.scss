@@ -20,13 +20,6 @@ $red: rgb(255, 0, 0);
 }
 
 body{
+    height: 3000px;
     background-color: $white;
-}
-
-p{
-    display: inline;
-}
-
-.active{
-    color: $red;
 }
